@@ -1,11 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
+.container-fluid {
+	margin: auto;
+	max-width: 950px;
+}
 .jumbotron {
 	background-color: transparent !important;
 }
 body {
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: 'Inconsolata', monospace;
 }
 span {
-	color: black !important;
+	color: black;
+}
+figcaption {
+	font-size: 22px;
+}
+::selection {
+	background: #E5E5E5;
 }
