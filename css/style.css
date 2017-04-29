@@ -16,6 +16,9 @@ span {
 figcaption {
 	font-size: 22px;
 }
-::selection {
-	background: #E5E5E5;
+.fa:hover {
+	color: grey;
+}
+nav {
+	font-size: 20px;
 }
