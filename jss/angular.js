@@ -16,7 +16,7 @@ app.config(function($routeProvider){
 	})
 	
 	.when('/resume',{
-		templateUrl: 'pages/resume,html',
+		templateUrl: 'pages/resume.html',
 		controller: 'ResumeController'	
 	})
 	
