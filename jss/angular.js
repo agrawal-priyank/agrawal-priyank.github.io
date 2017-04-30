@@ -5,13 +5,39 @@ var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function($routeProvider){
 	$routeProvider
-	// route for profile page
 	.when('/',{
 		templateUrl: 'pages/profile.html',
-		controller: 'MainController'
-	});
+		controller: 'ProfileController'
+	})
+	
+	.when('/projects', {
+		templateUrl: 'pages/projects.html',
+		controller: 'ProjectController'	
+	})
+	
+	.when('/resume',{
+		templateUrl: 'pages/resume,html',
+		controller: 'ResumeController'	
+	})
+	
+	.when('/contact',{
+		templateUrl: 'pages/contact.html',
+		controller: 'ContactController'
+	});	
 });
 
-app.controller('MainController', function($scope){
-	$scope.message = "Hello from AngularJS";
+app.controller('ProfileController', function($scope){
+	$scope.message = "Hello from Profile Page";
+});
+
+app.controller('ProjectController', function($scope){
+	$scope.message = "Hello from Projects Page";	
+});
+
+app.controller('ResumeController', function($scope){
+	$scope.message = "Hello from Resume Page";	
+});
+
+app.controller('ContactController', function($scope){
+	$scope.message = "Hello from Contact Page";	
 });

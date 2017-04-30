@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script type="text/javascript" src="jss/angular.js"></script>
 </head>
-<body ng-controller="MainController">
+<body>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header"> <a class="navbar-brand" href="index.html">PRIYANK AGRAWAL</a> </div>
@@ -28,15 +28,9 @@
   </div>
 </nav>
 <div class="container">
-  <div class="row jumbotron">
-    <div class="page-header text-center">
-      <h3>Come back later :)</h3>
-    </div>
+  <div class="row">
+    <div ng-view> </div>
   </div>
-</div>
-<div class="row"> 
-	<div ng-view>
-    </div>
 </div>
 </body>
 </html>
