@@ -4,7 +4,7 @@ var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function($routeProvider){
 	$routeProvider
-	.when('/',{
+	.when('/profile',{
 		templateUrl: 'pages/profile.html',
 		controller: 'ProfileController'
 	})
