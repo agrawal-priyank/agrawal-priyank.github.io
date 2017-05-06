@@ -3,12 +3,23 @@
 .jumbotron {
 	background-color: transparent !important;
 }
+
 span {
 	color: black;
 }
+
 figcaption {
 	font-size: 22px;
 }
+
 .fa:hover {
 	color: grey;
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+footer {
+    margin: 50px 0;
 }
