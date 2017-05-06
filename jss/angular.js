@@ -14,6 +14,11 @@ app.config(function($routeProvider){
 		controller: 'ProjectController'	
 	})
 	
+	.when('/skills', {
+		templateUrl: 'pages/skills.html',
+		controller: 'SkillController'	
+	})
+	
 	.when('/resume',{
 		templateUrl: 'pages/resume.html',
 		controller: 'ResumeController'	
@@ -31,6 +36,10 @@ app.controller('ProfileController', function($scope){
 
 app.controller('ProjectController', function($scope){
 	$scope.message = "Hello from Projects Page";	
+});
+
+app.controller('SkillController', function($scope){
+	$scope.message = "Hello from Skills Page";	
 });
 
 app.controller('ResumeController', function($scope){
