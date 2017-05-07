@@ -31,21 +31,21 @@ app.config(function($routeProvider){
 });
 
 app.controller('ProfileController', function($scope){
-	$scope.message = "Hello from Profile Page";
+	$scope.message = "Please come back later :)";
 });
 
 app.controller('ProjectController', function($scope){
-	$scope.message = "Hello from Projects Page";	
+	$scope.message = "Please come back later :)";	
 });
 
 app.controller('SkillController', function($scope){
-	$scope.message = "Hello from Skills Page";	
+	$scope.message = "Please come back later :)";	
 });
 
 app.controller('ResumeController', function($scope){
-	$scope.message = "Hello from Resume Page";	
+	$scope.message = "Please come back later :)";	
 });
 
 app.controller('ContactController', function($scope){
-	$scope.message = "Hello from Contact Page";	
+	$scope.message = "Please come back later :)";	
 });
