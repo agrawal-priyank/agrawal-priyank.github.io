@@ -1,11 +1,4 @@
-/*!
- * Start Bootstrap - Stylish Portfolio (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-
-/* Global Styles */
-
+/* Body */
 html, 
 body {
     width: 100%;
@@ -14,25 +7,6 @@ body {
 
 body {
     font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-header .fa {
-    color: #383838;
-}
-
-header .fa:hover {
-    color: white;
-}
-
-img {
-    background-color: #fff;
-    padding: 4px;
-}
-
-.header, .statusquo, .work, footer {
-    background-color: rgb(0, 43, 54);
-    padding: 50px 0;
-    color: white;
 }
 
 .text-vertical-center {
@@ -49,7 +23,6 @@ img {
 }
 
 /* Custom Button Styles */
-
 .btn-dark {
     border-radius: 0;
     color: #fff;
@@ -77,13 +50,11 @@ img {
 }
 
 /* Custom Horizontal Rule */
-
 hr.small {
     max-width: 100px;
 }
 
 /* Side Menu */
-
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -167,9 +138,16 @@ hr.small {
     margin: 5px 5px 0 0;
 }
 
-/* Header */
+/* Multple Sections */
+.header, .work, footer {
+    background-color: rgb(36, 36, 36);
+    padding: 50px 0;
+    color: white;
+}
 
+/* Header */
 .header {
+    /*background: #1F1F1F url(../img/northeastern.jpg) no-repeat center center;*/
     display: table;
     position: relative;
     width: 100%;
@@ -181,25 +159,67 @@ hr.small {
     padding: 50px 0;
 }
 
-/* Status Quo */
+header .fa {
+    color: #383838;
+}
 
-.statusquo {
+header .fa:hover {
+    color: white;
+}
+
+img {
+    background-color: #fff;
+    padding: 4px;
+}
+
+/* Summary */
+.summary {
     padding: 50px 0;
 }
 
-/* Services */
+/* Work */
+#workimage {
+   background: #1F1F1F url(../img/work.jpg) no-repeat center center;
+   background-size: cover !important;
+   -webkit-background-size: cover !important;
+   background-attachment: fixed;
+   position: relative;
+   min-height: 300px;
+   width: 100%;
+   overflow: hidden;   
 
-.services {
+   filter: grayscale(100%);
+}
+
+#workimage .text-container {
+   padding-top: 96px;
+   padding-bottom: 66px;   
+}
+
+#workimage p {
+    font-size: 50px;
+    color: white;
+}
+
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(1.1); 
+}
+
+/* Services */
+/*.services {
     padding: 50px 0;
 }
 
 .service-item {
     margin-bottom: 30px;
-}
+}*/
 
 /* Callout */
-
-.callout {
+/*.callout {
     display: table;
     width: 100%;
     height: 400px;
@@ -210,10 +230,9 @@ hr.small {
     background-size: cover;
     -o-background-size: cover;
 }
-
+*/
 /* Portfolio */
-
-.portfolio {
+/*.portfolio {
     padding: 50px 0;
 }
 
@@ -228,36 +247,18 @@ hr.small {
 .img-portfolio:hover {
     opacity: 0.8;
 }
-
+*/
 /* Call to Action */
-
-.call-to-action {
+/*.call-to-action {
     padding: 50px 0;
 }
 
 .call-to-action .btn {
     margin: 10px;
-}
-
-/* Map */
-
-.map {
-    height: 500px;
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
-}
-
-.map iframe {
-    pointer-events: none;
-}
+}*/
 
 /* Footer */
-
-footer {
+/*footer {
     padding: 100px 0;
 }
 
@@ -267,3 +268,4 @@ footer {
   bottom: 5px;
   right: 5px;
 }
+*/
