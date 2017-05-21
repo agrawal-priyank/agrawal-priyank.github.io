@@ -54,7 +54,7 @@ hr.small {
     max-width: 100px;
 }
 
-/* Side Menu */
+/* Side Menu*/
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
@@ -138,13 +138,6 @@ hr.small {
     margin: 5px 5px 0 0;
 }
 
-/* Multple Sections */
-.header, .work, footer {
-    background-color: rgb(36, 36, 36);
-    padding: 50px 0;
-    color: white;
-}
-
 /* Header */
 .header {
     /*background: #1F1F1F url(../img/northeastern.jpg) no-repeat center center;*/
@@ -172,35 +165,56 @@ img {
     padding: 4px;
 }
 
-/* Summary */
+/* General Style */
+.header, .work, .projects {
+    background-color: rgb(36, 36, 36);
+    padding: 50px 0;
+    color: white;
+}
+
 .summary {
     padding: 50px 0;
 }
 
-/* Work */
+.htmlcss {
+    background-color: rgb(36, 36, 36);    
+}
+
+footer {
+    background-color: white;
+    padding: 50px 0;    
+}
+
+/* Full Width Images Rules*/
 #workimage {
-   background: #1F1F1F url(../img/work.jpg) no-repeat center center;
+    background: #1F1F1F url(../img/work.jpg) no-repeat center center; 
+}
+
+#projectimage {
+    background: #1F1F1F url(../img/code.jpg) no-repeat center center;    
+}
+
+#workimage, #projectimage {
    background-size: cover !important;
    -webkit-background-size: cover !important;
    background-attachment: fixed;
    position: relative;
    min-height: 300px;
    width: 100%;
-   overflow: hidden;   
-
-   filter: grayscale(100%);
+   overflow: hidden;
 }
 
-#workimage .text-container {
+#workimage .text-container, #projectimage .text-container {
    padding-top: 96px;
    padding-bottom: 66px;   
 }
 
-#workimage p {
+#workimage p, #projectimage p {
     font-size: 50px;
     color: white;
 }
 
+/* Transition Effect */
 .grow { 
     transition: all .2s ease-in-out; 
 }
