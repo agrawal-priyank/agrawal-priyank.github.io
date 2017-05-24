@@ -240,11 +240,11 @@ footer {
 
 /* Full Width Images Rules*/
 #workimage {
-    background: #1F1F1F url(../img/boston.jpg) no-repeat center center; 
+    background: #1F1F1F url(../img/india.jpg) no-repeat center center; 
 }
 
 #projectimage {
-    background: #1F1F1F url(../img/india.jpg) no-repeat center center;    
+    background: #1F1F1F url(../img/code.png) no-repeat center center;    
 }
 
 #workimage, #projectimage {
