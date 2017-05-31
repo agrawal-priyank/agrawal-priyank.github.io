@@ -140,11 +140,11 @@ hr.small {
 
 /* Blur Effect */
 .image {
-   background: url('../img/bostonblur.jpg') no-repeat center center;
+   background: url('../img/nyblur.jpg') no-repeat center center;
 }
 
 .blurimage {
-   background: #1F1F1F url(../img/boston.jpg) no-repeat center center;
+   background: #1F1F1F url(../img/ny.jpg) no-repeat center center;
 }
 
 .blurImg {
