@@ -1,4 +1,4 @@
-/* HTML Body */
+/* Body */
 html, 
 body {
     width: 100%;
@@ -21,7 +21,6 @@ body {
     font-size: 4.5em;
     font-weight: 700;
 }
-/* Ends */
 
 /* Custom Button Styles */
 .btn-dark {
@@ -49,13 +48,11 @@ body {
     color: #333;
     background-color: rgba(255,255,255,0.8);
 }
-/* Ends */
 
 /* Custom Horizontal Rule */
 hr.small {
     max-width: 100px;
 }
-/* Ends */
 
 /* Side Menu*/
 #sidebar-wrapper {
@@ -140,15 +137,14 @@ hr.small {
 .toggle {
     margin: 5px 5px 0 0;
 }
-/* Ends */
 
 /* Blur Effect */
 .image {
-   background: url('../img/nyblur.jpg') no-repeat center center;
+   background: url('../img/bostonblur.jpg') no-repeat center center;
 }
 
 .blurimage {
-   background: #1F1F1F url(../img/ny.jpg) no-repeat center center;
+   background: #1F1F1F url(../img/boston.jpg) no-repeat center center;
 }
 
 .blurImg {
@@ -172,7 +168,6 @@ hr.small {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
 }
-/* Ends */
 
 /* Header */
 .header {
@@ -185,19 +180,20 @@ hr.small {
     background-size: cover;
     -o-background-size: cover;
     padding: 50px 0;
-    color: rgb(237,238,234);
 }
-/* Ends */
+
+header h1, h3 {
+    color: white;
+}
 
 /* Font Awesome Icons */
 header .fa, .projects .fa-angle-double-up {
-    color: #383838;
+    color: rgb(170,172,179);
 }
 
 header .fa:hover, .projects .fa-angle-double-up:hover {
-    color: rgb(237,238,234);
+    color: rgb(130,130,130);
 }
-/* Ends */
 
 /* Scroll Button */
 .page-scroll {
@@ -209,20 +205,43 @@ header .fa:hover, .projects .fa-angle-double-up:hover {
   font-size: 40px;
   background: transparent;
 }
-/* Ends */
 
-/* General Style */
-.work, .projects {
-    background-color: rgb(36, 36, 36);
-    padding: 50px 0;
-    color: white;
-}
-
+/* Summary */
 .summary {
     background-color: white;
     padding: 50px 0;
 }
 
+.summary p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Work */
+.work p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.work{
+    background-color: rgb(56,56,56);
+    padding: 50px 0;
+    color: white;
+}
+
+/* Projects */
+.projects p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.projects {
+    background-color: rgb(56,56,56);
+    padding: 50px 0;
+    color: white;
+}
+
+/* General Style */
 img {
     background-color: #fff;
     padding: 4px;
@@ -236,9 +255,17 @@ footer {
     background-color: white;
     padding: 50px 0;    
 }
-/* Ends */
 
-/* Full Width Images Rules*/
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+/* Full Width Image*/
 #workimage {
     background: #1F1F1F url(../img/india.jpg) no-repeat center center; 
 }
@@ -266,7 +293,6 @@ footer {
     font-size: 50px;
     color: white;
 }
-/* Ends */
 
 /* Transition Effect */
 .grow { 
@@ -276,4 +302,3 @@ footer {
 .grow:hover { 
     transform: scale(1.1); 
 }
-/* Ends */
