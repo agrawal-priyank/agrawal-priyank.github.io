@@ -42,6 +42,9 @@
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="" onclick=$("#menu-close").click();>Priyank Agrawal</a>
+            </li>
             <li>
                 <a href="#home" onclick=$("#menu-close").click();>Home</a>
             </li>
@@ -56,9 +59,6 @@
             </li>            
             <li>
                 <a href="#resume" onclick=$("#menu-close").click();>Resume</a>
-            </li>
-            <li>
-                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
             </li>
         </ul>
     </nav>
@@ -95,19 +95,15 @@
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6 text-center">
                     <i class="fa fa-user-circle fa-4x"></i>
-                    <h2>About Me</h2>
+                    <h2>Summary</h2>
                     <hr>                    
-                    <p class="lead">I have been a Software Engineering Intern (Co-op) at <a htarget="_blank" ref="http://www.mathworks.com">MathWorks</a>, Boston, MA since January 2017 which is scheduled to end in August 2017.</p>
-                    
-                    <p class="lead">I'm a graduate student since September 2015 at <a target="_blank" href="http://www.northeastern.edu">Northeastern University</a> where my major program is Master of Science in Information Systems Engineering (College of Engineering) and my minor is Master of Science in Data Mining Engineering. I recently started to work here as a Teaching Assistant and I will be completing my graduation in December 2017.</p>
-                    
+                    <p class="lead">I have been a Software Engineering Intern (Co-op) at <a htarget="_blank" ref="http://www.mathworks.com">MathWorks</a>, Boston, MA since January 2017 which is scheduled to end in August 2017.</p>                    
+                    <p class="lead">I'm a graduate student since September 2015 at <a target="_blank" href="http://www.northeastern.edu">Northeastern University</a> where my major program is Master of Science in Information Systems Engineering (College of Engineering) and my minor is Master of Science in Data Mining Engineering. I recently started to work here as a Teaching Assistant and I will be completing my graduation in December 2017.</p>                    
                     <p class="lead">In 2014, I worked at a start-up firm Bharat Naukri, Vadodara, India as a Software Engineer for an year and was busy preparing for the entrance exams to fulfill my aim to come to United States for higher studies. I also found some time to learn French at <a target="_blank" href="http://www.msubaroda.ac.in">The Maharaja Sayajirao University of Baroda</a>, a renowned university.</p>
-                    
                     <p class="lead">I completed my Bachelor of Engineering in Computer Engineering in 2013 from <a target="_blank" href="http://svitvasad.ac.in/Deva">Sardar Vallabhbhai Patel Institute of Technology</a> affiliated to <a target="_blank" href="http://gtu.ac.in">Gujarat Technological University</a> from Vasad, India.</p>
                 </div>
                 <div class="col-lg-3"></div>
             </div>        
-            <!-- /.row -->
         </div>
         <!-- /.container -->
     </section>
@@ -116,7 +112,8 @@
     <!-- Work Image begins-->
     <section id="workimage" class="content-section text-center">
         <div class="text-container">
-            <p class="lead"><strong>Places where I have worked.</strong></p>
+            <p><strong>Places where I have worked.</strong></p>
+            <i class="fa fa-group fa-4x"></i>
         </div>
     </section>
     <!-- Work Image ends -->
@@ -126,15 +123,12 @@
         <div class="container">
             <div class="row" id="workheading">
                 <div class="col-lg-3"></div>
-                <div class="col-lg-6 text-center">
-                <i class="fa fa-building-o fa-4x"></i>
+                <div class="col-lg-6 text-center">                
                 <h2>Employment</h2> 
                 <hr>
                 </div>
                 <div class="col-lg-3"></div>
             </div>
-
-            <br>            
 
             <div class="row" id="mathworks">
                 <div class="col-lg-3"></div>
@@ -147,21 +141,20 @@
                     <small>Software Engineering Intern</small>                    
                     </h2>
                     <p class="lead">
-                    Designing and developing a RESTful application that aims to automate the process for MathWorks’ account profiles. The processes include creation, replication and association of profiles in development and production environments. Designed and developed an API for the authentication team, and a RESTful web-service with an AngularJS frontend that can perform operations on tokens of production and development environments. The operations are creating, searching, invalidating and deleting tokens present in any environment. Both these applications will be used by over 50 engineers at MathWorks.
+                    I'm currently designing and developing a RESTful application that aims to automate the process for MathWorks’ account profiles. The processes include creation, replication and association of profiles in development and production environments. I also designed and developed an API for the authentication team, and a RESTful web-service with an AngularJS frontend that can perform operations on tokens of production and development environments. The operations are creating, searching, invalidating and deleting tokens present in any environment. Both these applications are going to be used by over 50 engineers at MathWorks.
                     </p>
                     <p class="lead">
-                    Involved in all the stages of SDLC namely Requirement Analysis, Functional Design, Architectural Design, Development and Testing.                    
-                    Following the Agile Scrum methodology in a test-driven environment with strict coding standards, code reviews and code optimization.
+                    I'm involved in all the stages of SDLC namely Requirements Analysis, Functional Design, Architectural Design, Development and Testing.                    
+                    Our team follows the Agile Scrum methodology in a test-driven environment with strict coding standards, code reviews and code optimization.
                     </p>
                     <p class="lead">
-                    Building a series of dynamic real-time dashboards and reports for tracking performance and usage metrics using the server log data in Splunk.                     
-                    Performing aggregations by querying the production data for business insights for future releases.
+                    I'm also building a series of dynamic dashboards, reports for tracking performance and usage metrics using the server log data in Splunk to do real-time analysis and performing aggregations by querying the production data for business insights for future releases.
                     </p>                                        
                 </div>
                 <div class="col-lg-3"></div>
             </div>
 
-            <br><br>
+            <br>
 
             <div class="row" id="northeastern">
                 <div class="col-lg-3"></div>
@@ -180,40 +173,33 @@
                 <div class="col-lg-3"></div>
             </div>
 
-            <br><br>
+            <br>
 
             <div class="row" id="bharatnaukri">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10 text-center">                     
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 text-center">                     
                     <img class="img-responsive img-circle center-block grow bharatnaukri" src="img/ba.png" width="180px" alt="Bhart Naukri">
                     <h2><span>Bharat Naukri</span><br>
-                    <small>Vadodara, India</small>
+                    <small>Vadodara, India</small><br>                    
+                    <small>Software Engineering Intern - Android</small><br>
+                    <small>June 2012 to May 2013</small><br>
                     </h2>
-                    <div class="col-lg-6">
-                        <h2>
-                        <small>Software Engineering Intern - Android</small><br>
-                        <small>June 2012 to May 2013</small><br>
-                        </h2>
-                        <p class="lead">
-                        My first internship during the senior year of my under-graduate education started in June 2012. 
-                        During this internship, I developed an Android application named Hotelier helping users to book rooms and tables at restaurants or hotels in the city.                        
-                        This was a college project that was to be presented to an external jury.
-                        </p> 
-                    </div>
-                    <div class="col-lg-6">
-                        <h2>
-                        <small>Software Engineer</small><br>
-                        <small>June 2014 to May 2015</small><br>                    
-                        </h2>                                    
-                        <p class="lead">
-                        After working as an intern at this firm, I joined in an year as a full-time in June 2014.
-                        I was involved in building a J2EE web application that is now being used by many of the firm's engineers.
-                        </p>
-                    </div>                                
+                    <p class="lead">
+                    My first internship during the senior year of my under-graduate education started in June 2012. 
+                    During this internship, I developed an Android application named Hotelier helping users to book rooms and tables at restaurants and hotels in the city.                        
+                    This was a college final project that was to be presented to an external jury.
+                    </p> 
+                    <h2>
+                    <small>Software Engineer</small><br>
+                    <small>June 2014 to May 2015</small><br>                    
+                    </h2>                                    
+                    <p class="lead">
+                    After working as an intern at this firm, I joined an year later as a full-time employee in June 2014.
+                    I was involved in developing a J2EE application that is being used by engineers at the firm.
+                    </p>                                              
                 </div>
-                <div class="col-lg-1"></div>
+                <div class="col-lg-3"></div>
             </div>
-            <!-- /.row -->
         </div>
         <!-- /.container -->        
     </section>
@@ -222,7 +208,8 @@
     <!-- Projects Image begins-->
     <section id="projectimage" class="content-section text-center">
         <div class="text-container">
-            <p class="lead"><strong>Projects that I have built.</strong></p>
+            <p><strong>Projects that I have built.</strong></p>
+            <i class="fa fa-code fa-4x"></i>
         </div>
     </section>
     <!-- Projects Image ends -->
@@ -232,8 +219,7 @@
         <div class="container">
             <div class="row" id="softwaredevelopmentheading">
                 <div class="col-lg-3"></div>
-                <div class="col-lg-6 text-center">
-                <i class="fa fa-code fa-4x"></i>
+                <div class="col-lg-6 text-center">                
                 <h2>Software Development</h2> 
                 <hr>
                 </div>                
@@ -250,15 +236,12 @@
                     <h2><span>Personal Website</span><br>
                     <small>May 2017 to Present</small><br>
                     <small>HTML5, CSS3, Bootstrap, JavaScript</small>                    
-                    </h2>
-                    <p class="lead">I started to create this website by downloading a basic template from <a a target="_blank" href="https://startbootstrap.com/template-categories/portfolios/">Start Bootstrap</a> and am building rest of the content upon it. I will be updating it over time.</p>                    
+                    </h2>                    
                 </div>
                 <div class="col-lg-3">
                 </div>
             </div>
-
-            <br><br>
-
+    
             <div class="row">
                 <div class="col-lg-1">
                 </div>
@@ -285,7 +268,7 @@
                 </div>                   
             </div>
 
-            <br><br>
+            <br>
 
             <div class="row text-center">
                 <span class="fa fa-square fa-1x" aria-hidden="true">&nbsp;&nbsp;
@@ -305,13 +288,12 @@
             </div>
         </div>
 
-        <br><br><br>
+        <br>
 
         <div class="container">
             <div class="row" id="datascienceheading">
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6 text-center">
-                <i class="fa fa-code-fork fa-4x"></i>                
                 <h2>Data Science</h2> 
                 <hr>
                 </div>
@@ -346,8 +328,6 @@
                 </div>                   
             </div>
 
-            <br><br>
-
             <div class="row">
                 <div class="col-lg-1">
                 </div>
@@ -374,7 +354,7 @@
                 </div>                   
             </div>
 
-            <br><br>
+            <br>
 
             <div class="row text-center">
                 <span class="fa fa-square fa-1x" aria-hidden="true">&nbsp;&nbsp;
@@ -391,22 +371,25 @@
                 </div>
                 <div class="col-lg-3">
                 </div>
-            </div>
-
-            <div class="row">
-                <a href="#home" class="btn page-scroll center-block">
-                    <i class="fa fa-angle-double-up animated"></i>
-                </a> 
-            </div>
-            <!-- /.row -->
+            </div>            
         </div>
         <!-- /.container -->        
     </section>
     <!-- Projects ends -->
 
+    <!-- Resume begins-->
+    <section id="resume" class="content-section text-center">
+        <div class="text-container">
+        <p><strong>Here's my resume.</strong></p>
+        <a target="_blank" href="assets/agrawal-priyank.pdf"><span class="fa fa-cloud-download fa-4x" aria-hidden="true"></span></a>            
+        </div>
+    </section>
+    <!-- Resume ends -->
+
     <!-- Footer begins -->
     <footer>
         <div class="container text-center">
+            <p class="lead">You can reach me at agrawal.pr@husky.neu.edu.</p>            
             <p>Copyright &copy; 2017 Priyank Agrawal.</p>
         </div>
     </footer>

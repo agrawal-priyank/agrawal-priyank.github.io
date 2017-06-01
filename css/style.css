@@ -22,6 +22,109 @@ body {
     font-weight: 700;
 }
 
+/* Header */
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding: 50px 0;
+}
+
+header h1, h3 {
+    color: white;
+}
+
+header .fa, .projects .fa-angle-double-up {
+    color: rgb(170,172,179);
+}
+
+header .fa:hover, .projects .fa-angle-double-up:hover {
+    color: rgb(130,130,130);
+}
+
+/* Summary */
+.summary {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.summary p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Work */
+.work p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.work{
+    background-color: rgb(56,56,56);
+    padding: 50px 0;
+    color: white;
+}
+
+/* Projects */
+.projects p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.projects {
+    background-color: rgb(56,56,56);
+    padding: 50px 0;
+    color: white;
+}
+
+/* Resume */
+#resume p {
+    font-size: 50px;
+    color: white;
+}
+
+#resume {
+    background-color: black;
+}
+
+#resume .fa {
+    color: rgb(130,130,130);
+}
+
+#resume .fa:hover {
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 50px 0;
+}
+
+/* General Style */
+img {
+    background-color: #fff;
+    padding: 4px;
+}
+
+.htmllogo {
+    background-color: rgb(36, 36, 36);    
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+
 /* Custom Button Styles */
 .btn-dark {
     border-radius: 0;
@@ -124,6 +227,14 @@ hr.small {
     right: 0;
 }
 
+#menu-close {
+    border-radius: 5px;
+    background-color: rgb(34,34,34);
+    color: white;
+    border-style: solid;
+    border-color: white;
+}
+
 #sidebar-wrapper.active {
     right: 250px;
     width: 250px;
@@ -140,11 +251,11 @@ hr.small {
 
 /* Blur Effect */
 .image {
-   background: url('../img/nyblur.jpg') no-repeat center center;
+   background: url('../img/mwblur.jpg') no-repeat center center;
 }
 
 .blurimage {
-   background: #1F1F1F url(../img/ny.jpg) no-repeat center center;
+   background: #1F1F1F url(../img/mw.jpg) no-repeat center center;
 }
 
 .blurImg {
@@ -169,30 +280,13 @@ hr.small {
     filter: alpha(opacity=0);
 }
 
-/* Header */
-.header {
-    display: table;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    padding: 50px 0;
+/* Transition Effect */
+.grow { 
+    transition: all .2s ease-in-out; 
 }
 
-header h1, h3 {
-    color: white;
-}
-
-/* Font Awesome Icons */
-header .fa, .projects .fa-angle-double-up {
-    color: rgb(170,172,179);
-}
-
-header .fa:hover, .projects .fa-angle-double-up:hover {
-    color: rgb(130,130,130);
+.grow:hover { 
+    transform: scale(1.1); 
 }
 
 /* Scroll Button */
@@ -206,68 +300,9 @@ header .fa:hover, .projects .fa-angle-double-up:hover {
   background: transparent;
 }
 
-/* Summary */
-.summary {
-    background-color: white;
-    padding: 50px 0;
-}
-
-.summary p {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-/* Work */
-.work p {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.work{
-    background-color: rgb(56,56,56);
-    padding: 50px 0;
-    color: white;
-}
-
-/* Projects */
-.projects p {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.projects {
-    background-color: rgb(56,56,56);
-    padding: 50px 0;
-    color: white;
-}
-
-/* General Style */
-img {
-    background-color: #fff;
-    padding: 4px;
-}
-
-.htmllogo {
-    background-color: rgb(36, 36, 36);    
-}
-
-footer {
-    background-color: white;
-    padding: 50px 0;    
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0; 
-}
-
 /* Full Width Image*/
 #workimage {
-    background: #1F1F1F url(../img/india.jpg) no-repeat center center; 
+    background: #1F1F1F url(../img/ny.jpg) no-repeat center center; 
 }
 
 #projectimage {
@@ -279,26 +314,16 @@ hr {
    -webkit-background-size: cover !important;
    background-attachment: fixed;
    position: relative;
-   min-height: 300px;
    width: 100%;
    overflow: hidden;
 }
 
-#workimage .text-container, #projectimage .text-container {
-   padding-top: 96px;
-   padding-bottom: 66px;   
+#workimage .text-container, #projectimage .text-container, #resume .text-container {
+   padding-top: 60px;
+   padding-bottom: 60px;   
 }
 
-#workimage p, #projectimage p {
+#workimage p, #projectimage p, #workimage .fa, #projectimage .fa {
     font-size: 50px;
     color: white;
-}
-
-/* Transition Effect */
-.grow { 
-    transition: all .2s ease-in-out; 
-}
-
-.grow:hover { 
-    transform: scale(1.1); 
 }
