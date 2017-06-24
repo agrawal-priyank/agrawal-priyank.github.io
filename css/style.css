@@ -140,9 +140,8 @@ hr {
 }
 
 .btn-light {
-    border-radius: 0;
-    color: #333;
-    background-color: rgb(255,255,255);
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
 }
 
 .btn-light:hover,
@@ -300,7 +299,7 @@ hr.small {
   background: transparent;
 }
 
-/* Full Width Image*/
+/* Full Width Image */
 #workimage {
     background: #1F1F1F url(../img/ny.jpg) no-repeat center center; 
 }
@@ -326,4 +325,22 @@ hr.small {
 #workimage p, #projectimage p, #workimage .fa, #projectimage .fa {
     font-size: 50px;
     color: white;
+}
+
+/* Back to top */
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    display:none;
+    text-decoration: none;
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.back-to-top:hover {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
 }

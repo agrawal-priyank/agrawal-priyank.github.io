@@ -393,7 +393,7 @@
     <section id="resume" class="content-section text-center">
         <div class="text-container">
         <p><strong>Here's my resume.</strong></p>
-        <a target="_blank" href="assets/agrawal-priyank.pdf"><span class="fa fa-cloud-download fa-4x" aria-hidden="true"></span></a>            
+        <a target="_blank" href="assets/agrawal-priyank.pdf"><span class="fa fa-file-pdf-o fa-4x" aria-hidden="true"></span></a>            
         </div>
     </section>
     <!-- Resume ends -->
@@ -406,6 +406,10 @@
         </div>
     </footer>
     <!-- Footer ends -->
+
+    <!-- Bact to top begins -->
+    <a id="back-to-top" href="#" class="btn btn-dark btn-lg back-to-top" role="button"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <!-- Bact to top ends -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -487,6 +491,8 @@
     $('.map').on('click', onMapClickHandler);
     </script>
 
+
+
     <!-- Blur Function -->
     <script type="text/javascript">
     (function () {
@@ -506,6 +512,28 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-99837097-1', 'auto');
     ga('send', 'pageview');
+    </script>
+
+    <!-- Back to top -->
+    <script>
+    $(document).ready(function(){
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+        $('#back-to-top').tooltip('show');
+    });     
     </script>
 
 </body>
