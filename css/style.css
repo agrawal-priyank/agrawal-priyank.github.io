@@ -254,7 +254,7 @@ hr.small {
 }
 
 .blurimage {
-   background: #1F1F1F url('../img/mw.jpg') no-repeat center center;
+   background: #1F1F1F url(../img/mw.jpg) no-repeat center center;
 }
 
 .blurImg {
