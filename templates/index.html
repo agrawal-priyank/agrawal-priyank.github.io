@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#12110e; --ink:#f4efe4; --muted:#b4aa98; --line:rgba(244,239,228,.12); --gold:#e3b23c; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"IBM Plex Sans",sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    main { max-width:64rem; margin:0 auto; padding:4rem 6vw 5rem; }
+    .kicker { font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin:0 0 1rem; }
+    h1 { font-family:Newsreader,serif; font-size:clamp(2.4rem,6vw,4.2rem); font-weight:500; letter-spacing:-.03em; margin:0 0 1rem; }
+    .lede { color:var(--muted); max-width:38rem; margin:0 0 2.5rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    a.card { display:block; padding:1.4rem 1.5rem 1.5rem; border:1px solid var(--line); border-radius:16px; text-decoration:none; color:inherit; background:#1b1914; min-height:11rem; }
+    a.card:hover { border-color:color-mix(in srgb, var(--gold) 50%, var(--line)); }
+    .swatch { height:8px; width:42%; border-radius:99px; margin-bottom:1.1rem; }
+    h2 { margin:0 0 .4rem; font-size:1.25rem; }
+    p { margin:0; color:var(--muted); }
+    .meta { margin-top:1rem; font-size:.8rem; color:#8a8172; }
+    @media (max-width:720px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">Choose a direction</p>
+    <h1>Four templates. Placeholder copy only.</h1>
+    <p class="lede">Pick a layout. You can send real content later and we will drop it into the one you like. Nothing here is the live GitHub Pages site until you merge.</p>
+    <div class="grid">
+      <a class="card" href="paper.html">
+        <div class="swatch" style="background:#111;box-shadow:8px 0 0 #c41e3a"></div>
+        <h2>Paper</h2>
+        <p>Light, print-like, lots of air. Big type, thin rules, no cards. Reads like a CV that was designed.</p>
+        <p class="meta">Best if you want quiet and senior</p>
+      </a>
+      <a class="card" href="prompt.html">
+        <div class="swatch" style="background:#0b0f0c;box-shadow:8px 0 0 #d4a017"></div>
+        <h2>Prompt</h2>
+        <p>Terminal energy. Monospace, command-line nav, amber on near-black. Playful without being a joke.</p>
+        <p class="meta">Best if you want engineer-coded</p>
+      </a>
+      <a class="card" href="vitrine.html">
+        <div class="swatch" style="background:#1c1913;box-shadow:8px 0 0 #c4b49a"></div>
+        <h2>Vitrine</h2>
+        <p>Split screen. Image panel on one side, oversized project list on the other. Cinematic, sparse.</p>
+        <p class="meta">Best if the photo and case studies should lead</p>
+      </a>
+      <a class="card" href="folio.html">
+        <div class="swatch" style="background:#12110e;box-shadow:8px 0 0 #e3b23c"></div>
+        <h2>Folio</h2>
+        <p>The draft we already started: dark editorial, gold accent, cards, light/dark toggle.</p>
+        <p class="meta">Best if you liked the first mock</p>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

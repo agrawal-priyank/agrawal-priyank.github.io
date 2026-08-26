@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper — layout study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Libre+Franklin:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#161412; --mute:#5c564c; --rule:#161412; --accent:#c41e3a; --bg:#f4f0e8; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Libre Franklin",sans-serif; }
+    a { color:inherit; }
+    header { display:flex; justify-content:space-between; align-items:baseline; padding:1.4rem 7vw 1.2rem; border-bottom:1px solid var(--ink); }
+    header a { text-decoration:none; font-size:.85rem; }
+    nav { display:flex; gap:1.4rem; }
+    main { padding:0 7vw 5rem; max-width:78rem; margin:0 auto; }
+    .hero { display:grid; grid-template-columns:1.3fr .7fr; gap:3rem; padding:4.5rem 0 3.5rem; border-bottom:1px solid var(--ink); }
+    h1 { font-size:clamp(3.5rem,9vw,8rem); line-height:.85; letter-spacing:-.06em; margin:0; font-weight:500; }
+    .role { margin:1.4rem 0 0; font-size:1.05rem; }
+    .mark { width:3.2rem; height:.18rem; background:var(--accent); margin:0 0 1.2rem; }
+    .aside { font-size:.95rem; color:var(--mute); align-self:end; }
+    section { padding:3rem 0; border-bottom:1px solid var(--ink); }
+    h2 { margin:0 0 1.4rem; font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; }
+    .about { max-width:38rem; font-size:1.2rem; line-height:1.55; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { text-align:left; padding:.85rem 0; border-bottom:1px solid rgba(22,20,18,.18); vertical-align:top; }
+    th { width:22%; font-weight:500; }
+    .projects { display:grid; gap:0; }
+    .projects a { display:grid; grid-template-columns:4rem 1fr auto; gap:1rem; padding:1rem 0; border-bottom:1px solid rgba(22,20,18,.18); text-decoration:none; }
+    .num { color:var(--accent); font-variant-numeric:tabular-nums; }
+    footer { display:flex; justify-content:space-between; padding:2rem 0 0; font-size:.9rem; }
+    @media (max-width:800px) {
+      .hero, .projects a { grid-template-columns:1fr; }
+      nav { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Studies</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Work samples</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="mark"></div>
+        <h1>Your name here</h1>
+        <p class="role">Your title · City</p>
+      </div>
+      <p class="aside">Paper is a light template. It uses type, margins, and one red rule. No cards, no gradients. Your photo can sit in the empty right column later, or we can leave it type-only.</p>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p class="about">Replace this paragraph. Two or three sentences about what you actually do. Keep it specific. This layout wants short copy and long silence around it.</p>
+    </section>
+    <section id="work">
+      <h2>Work</h2>
+      <table>
+        <tr><th>20XX–now</th><td><strong>Company</strong><br>Role. One sentence about the work.</td></tr>
+        <tr><th>20XX–20XX</th><td><strong>Company</strong><br>Role. One sentence about the work.</td></tr>
+        <tr><th>20XX–20XX</th><td><strong>Company</strong><br>Role. One sentence about the work.</td></tr>
+      </table>
+    </section>
+    <section id="projects">
+      <h2>Selected work</h2>
+      <div class="projects">
+        <a href="#"><span class="num">01</span><span>Project title<br><small>One-line description you will replace</small></span><span>Year</span></a>
+        <a href="#"><span class="num">02</span><span>Project title<br><small>One-line description you will replace</small></span><span>Year</span></a>
+        <a href="#"><span class="num">03</span><span>Project title<br><small>One-line description you will replace</small></span><span>Year</span></a>
+      </div>
+    </section>
+    <footer id="contact">
+      <span>LinkedIn · GitHub · Email</span>
+      <span>Paper template</span>
+    </footer>
+  </main>
+</body>
+</html>

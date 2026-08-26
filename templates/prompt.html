@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt — layout study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#070907; --ink:#d7e0c8; --dim:#7d8a6e; --accent:#e3b23c; --ok:#b6e388; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"IBM Plex Mono",monospace; font-size:15px; line-height:1.7; }
+    body::before { content:""; pointer-events:none; position:fixed; inset:0; background:repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0,0,0,.12) 2px 3px); opacity:.35; }
+    a { color:var(--accent); }
+    header { display:flex; justify-content:space-between; gap:1rem; padding:1rem 5vw; border-bottom:1px solid #1d241c; }
+    header a { color:var(--dim); text-decoration:none; }
+    main { padding:2.5rem 5vw 4rem; max-width:58rem; }
+    .prompt { color:var(--ok); }
+    h1 { font-size:1rem; font-weight:500; margin:1.2rem 0 .4rem; color:var(--accent); }
+    p { margin:0 0 .8rem; max-width:46rem; }
+    section { margin:2.2rem 0; }
+    .block { border:1px solid #243022; padding:1rem 1.1rem; background:#0c100c; }
+    .row { display:grid; grid-template-columns:9rem 1fr; gap:.6rem 1rem; padding:.35rem 0; }
+    .dim { color:var(--dim); }
+    nav { display:flex; gap:1rem; flex-wrap:wrap; }
+    @media (max-width:700px) { .row { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">cd ..</a>
+    <nav>
+      <a href="#about">./about</a>
+      <a href="#work">./work</a>
+      <a href="#projects">./projects</a>
+      <a href="#contact">./contact</a>
+    </nav>
+  </header>
+  <main>
+    <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ whoami</p>
+    <h1>your.name</h1>
+    <p>your.title — city</p>
+    <p class="dim"># Prompt is a terminal template. Nav looks like paths. Body looks like a session. Swap the commands for your bio later.</p>
+
+    <section id="about">
+      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ cat about.txt</p>
+      <div class="block">Replace this. A short paragraph about the work you want people to remember. Keep it under six lines so it still feels like a terminal.</div>
+    </section>
+
+    <section id="work">
+      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ ls work/</p>
+      <div class="block">
+        <div class="row"><span class="dim">20xx-now</span><span>company / role</span></div>
+        <div class="row"><span class="dim">20xx-20xx</span><span>company / role</span></div>
+        <div class="row"><span class="dim">20xx-20xx</span><span>company / role</span></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ git log --oneline</p>
+      <div class="block">
+        <div class="row"><span class="dim">a1b2c3d</span><span>project-one — one line</span></div>
+        <div class="row"><span class="dim">e4f5a6b</span><span>project-two — one line</span></div>
+        <div class="row"><span class="dim">c7d8e9f</span><span>project-three — one line</span></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ echo contact</p>
+      <p>linkedin · github · email</p>
+    </section>
+  </main>
+</body>
+</html>
