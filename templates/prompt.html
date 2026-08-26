@@ -8,68 +8,320 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#070907; --ink:#d7e0c8; --dim:#7d8a6e; --accent:#e3b23c; --ok:#b6e388; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--ink); font-family:"IBM Plex Mono",monospace; font-size:15px; line-height:1.7; }
-    body::before { content:""; pointer-events:none; position:fixed; inset:0; background:repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0,0,0,.12) 2px 3px); opacity:.35; }
-    a { color:var(--accent); }
-    header { display:flex; justify-content:space-between; gap:1rem; padding:1rem 5vw; border-bottom:1px solid #1d241c; }
-    header a { color:var(--dim); text-decoration:none; }
-    main { padding:2.5rem 5vw 4rem; max-width:58rem; }
-    .prompt { color:var(--ok); }
-    h1 { font-size:1rem; font-weight:500; margin:1.2rem 0 .4rem; color:var(--accent); }
-    p { margin:0 0 .8rem; max-width:46rem; }
-    section { margin:2.2rem 0; }
-    .block { border:1px solid #243022; padding:1rem 1.1rem; background:#0c100c; }
-    .row { display:grid; grid-template-columns:9rem 1fr; gap:.6rem 1rem; padding:.35rem 0; }
-    .dim { color:var(--dim); }
-    nav { display:flex; gap:1rem; flex-wrap:wrap; }
-    @media (max-width:700px) { .row { grid-template-columns:1fr; } }
+    :root, [data-theme="amber"] {
+      --bg: #070806;
+      --panel: #10110c;
+      --ink: #f0d9a0;
+      --dim: #8a7a52;
+      --ok: #e3b23c;
+      --err: #e07a5f;
+      --line: #2a2618;
+      --glow: rgba(227, 178, 60, 0.22);
+    }
+    [data-theme="green"] {
+      --bg: #050805;
+      --panel: #0b120c;
+      --ink: #c8f0c2;
+      --dim: #5f8a5c;
+      --ok: #7cdb6e;
+      --err: #ff8b7a;
+      --line: #1d2a1c;
+      --glow: rgba(124, 219, 110, 0.2);
+    }
+    [data-theme="cyan"] {
+      --bg: #06090c;
+      --panel: #0c1218;
+      --ink: #c9e7f2;
+      --dim: #6a8896;
+      --ok: #6ec8e0;
+      --err: #e07a5f;
+      --line: #1c2a33;
+      --glow: rgba(110, 200, 224, 0.2);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 50% -10%, var(--glow), transparent 50%), var(--bg);
+      color: var(--ink);
+      font: 15px/1.6 "IBM Plex Mono", ui-monospace, monospace;
+    }
+    body::after {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(to bottom, transparent 0 2px, rgba(0,0,0,.18) 2px 3px);
+      opacity: .28;
+    }
+    a { color: var(--ok); }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .85rem 5vw;
+      color: var(--dim);
+    }
+    .top a { color: var(--dim); text-decoration: none; }
+    .wrap {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0 5vw 2.5rem;
+    }
+    .window {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel);
+      box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 0 40px var(--glow);
+      overflow: hidden;
+    }
+    .chrome {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .55rem .8rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--dim);
+      font-size: .78rem;
+    }
+    .dots { display: flex; gap: .35rem; }
+    .dots i { width: .7rem; height: .7rem; border-radius: 50%; display: block; background: #3a3a32; }
+    .dots i:first-child { background: #c45c4a; }
+    .dots i:nth-child(2) { background: #c9a227; }
+    .dots i:nth-child(3) { background: #6aa84f; }
+    .screen {
+      min-height: 28rem;
+      max-height: min(70vh, 40rem);
+      overflow: auto;
+      padding: 1rem 1.1rem 0;
+    }
+    .line { white-space: pre-wrap; word-break: break-word; margin: 0 0 .55rem; }
+    .cmd { color: var(--ok); }
+    .err { color: var(--err); }
+    .dim { color: var(--dim); }
+    .form {
+      display: flex;
+      gap: .55rem;
+      align-items: baseline;
+      padding: .2rem 1.1rem 1rem;
+    }
+    .form label { color: var(--ok); white-space: nowrap; }
+    .form input {
+      flex: 1;
+      min-width: 0;
+      background: transparent;
+      border: 0;
+      color: var(--ink);
+      font: inherit;
+      caret-color: var(--ok);
+      outline: none;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: 1rem;
+    }
+    .chips button {
+      font: inherit;
+      font-size: .78rem;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .25rem .7rem;
+      cursor: pointer;
+    }
+    .chips button:hover, .chips button:focus-visible { border-color: var(--ok); color: var(--ok); }
+    .hint { margin: .8rem 0 0; color: var(--dim); font-size: .8rem; }
+    @media (prefers-reduced-motion: reduce) {
+      body::after { display: none; }
+    }
   </style>
 </head>
-<body>
-  <header>
+<body data-theme="amber">
+  <div class="top">
     <a href="index.html">cd ..</a>
-    <nav>
-      <a href="#about">./about</a>
-      <a href="#work">./work</a>
-      <a href="#projects">./projects</a>
-      <a href="#contact">./contact</a>
-    </nav>
-  </header>
-  <main>
-    <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ whoami</p>
-    <h1>your.name</h1>
-    <p>your.title — city</p>
-    <p class="dim"># Prompt is a terminal template. Nav looks like paths. Body looks like a session. Swap the commands for your bio later.</p>
-
-    <section id="about">
-      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ cat about.txt</p>
-      <div class="block">Replace this. A short paragraph about the work you want people to remember. Keep it under six lines so it still feels like a terminal.</div>
-    </section>
-
-    <section id="work">
-      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ ls work/</p>
-      <div class="block">
-        <div class="row"><span class="dim">20xx-now</span><span>company / role</span></div>
-        <div class="row"><span class="dim">20xx-20xx</span><span>company / role</span></div>
-        <div class="row"><span class="dim">20xx-20xx</span><span>company / role</span></div>
+    <span>theme amber · green · cyan</span>
+  </div>
+  <div class="wrap">
+    <div class="window">
+      <div class="chrome">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>guest@portfolio:~</span>
       </div>
-    </section>
+      <div class="screen" id="screen" tabindex="-1" aria-live="polite"></div>
+      <form class="form" id="cli" autocomplete="off">
+        <label for="cmd">guest@portfolio:~$</label>
+        <input id="cmd" name="cmd" spellcheck="false" aria-label="Terminal command">
+      </form>
+    </div>
+    <div class="chips" id="chips"></div>
+    <p class="hint">Type a command, tap a chip, Tab to complete, ↑/↓ for history. Copied the idea from public terminal portfolios (typed CLI, window chrome, themes) — not their code.</p>
+  </div>
+  <script>
+    const PROFILE = {
+      name: "your.name",
+      title: "your.title",
+      city: "city",
+      about: "Replace this. A short paragraph about the work you want people to remember.",
+      work: [
+        ["20xx-now", "company / role"],
+        ["20xx-20xx", "company / role"],
+        ["20xx-20xx", "company / role"]
+      ],
+      projects: [
+        ["project-one", "one line"],
+        ["project-two", "one line"],
+        ["project-three", "one line"]
+      ],
+      contact: "linkedin · github · email"
+    };
 
-    <section id="projects">
-      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ git log --oneline</p>
-      <div class="block">
-        <div class="row"><span class="dim">a1b2c3d</span><span>project-one — one line</span></div>
-        <div class="row"><span class="dim">e4f5a6b</span><span>project-two — one line</span></div>
-        <div class="row"><span class="dim">c7d8e9f</span><span>project-three — one line</span></div>
-      </div>
-    </section>
+    const COMMANDS = ["help", "whoami", "about", "work", "projects", "ls", "contact", "social", "banner", "neofetch", "theme", "date", "clear", "history"];
+    const screen = document.getElementById("screen");
+    const form = document.getElementById("cli");
+    const input = document.getElementById("cmd");
+    const chips = document.getElementById("chips");
+    const history = [];
+    let histIdx = -1;
 
-    <section id="contact">
-      <p><span class="prompt">guest@site</span>:<span class="dim">~</span>$ echo contact</p>
-      <p>linkedin · github · email</p>
-    </section>
-  </main>
+    function print(html, cls) {
+      const p = document.createElement("p");
+      p.className = "line" + (cls ? " " + cls : "");
+      p.innerHTML = html;
+      screen.appendChild(p);
+      screen.scrollTop = screen.scrollHeight;
+    }
+
+    function echoCmd(cmd) {
+      print('<span class="cmd">guest@portfolio:~$</span> ' + escapeHtml(cmd));
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, function (c) {
+        return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
+      });
+    }
+
+    function rows(pairs) {
+      return pairs.map(function (r) {
+        return '<span class="dim">' + escapeHtml(r[0]).padEnd(12, " ").replace(/ /g, "&nbsp;") + "</span>" + escapeHtml(r[1]);
+      }).join("<br>");
+    }
+
+    function run(raw) {
+      const text = raw.trim();
+      if (!text) return;
+      history.push(text);
+      histIdx = history.length;
+      echoCmd(text);
+      const parts = text.split(/\s+/);
+      const name = parts[0].toLowerCase();
+      const arg = parts.slice(1).join(" ");
+      const out = dispatch(name, arg);
+      if (out === "__CLEAR__") {
+        screen.innerHTML = "";
+        return;
+      }
+      if (out) print(out, name === "help" ? "dim" : "");
+    }
+
+    function dispatch(name, arg) {
+      if (name === "help") {
+        return COMMANDS.map(function (c) { return c.padEnd(12, " ") + describe(c); }).join("<br>").replace(/ /g, "&nbsp;");
+      }
+      if (name === "whoami") return PROFILE.name + "<br>" + PROFILE.title + " — " + PROFILE.city;
+      if (name === "about") return escapeHtml(PROFILE.about);
+      if (name === "work") return rows(PROFILE.work);
+      if (name === "projects" || name === "ls") return rows(PROFILE.projects);
+      if (name === "contact" || name === "social") return escapeHtml(PROFILE.contact);
+      if (name === "banner") {
+        return "portfolio.sh<br>interactive prompt · placeholder copy";
+      }
+      if (name === "neofetch") {
+        return rows([
+          ["host", "guest@portfolio"],
+          ["name", PROFILE.name],
+          ["role", PROFILE.title],
+          ["loc", PROFILE.city],
+          ["shell", "prompt 0.2"],
+          ["theme", document.body.getAttribute("data-theme")]
+        ]);
+      }
+      if (name === "theme") {
+        const next = arg || "amber";
+        if (["amber", "green", "cyan"].indexOf(next) === -1) return '<span class="err">themes: amber, green, cyan</span>';
+        document.body.setAttribute("data-theme", next);
+        localStorage.setItem("prompt-theme", next);
+        return "theme → " + next;
+      }
+      if (name === "date") return new Date().toString();
+      if (name === "clear") return "__CLEAR__";
+      if (name === "history") return history.map(function (h, i) { return String(i + 1).padStart(3, " ") + "  " + h; }).join("<br>").replace(/ /g, "&nbsp;");
+      return '<span class="err">command not found: ' + escapeHtml(name) + "</span><br>try <span class=\"cmd\">help</span>";
+    }
+
+    function describe(c) {
+      const map = {
+        help: "list commands",
+        whoami: "name and title",
+        about: "short bio",
+        work: "jobs",
+        projects: "selected work",
+        ls: "alias for projects",
+        contact: "links",
+        social: "alias for contact",
+        banner: "header",
+        neofetch: "system-style summary",
+        theme: "amber | green | cyan",
+        date: "local time",
+        clear: "wipe the screen",
+        history: "typed commands"
+      };
+      return map[c] || "";
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      run(input.value);
+      input.value = "";
+    });
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (!history.length) return;
+        histIdx = Math.max(0, histIdx - 1);
+        input.value = history[histIdx];
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        histIdx = Math.min(history.length, histIdx + 1);
+        input.value = histIdx === history.length ? "" : history[histIdx];
+      } else if (e.key === "Tab") {
+        e.preventDefault();
+        const cur = input.value.trim();
+        const hit = COMMANDS.filter(function (c) { return c.indexOf(cur) === 0; });
+        if (hit.length === 1) input.value = hit[0];
+      }
+    });
+
+    ["help", "whoami", "about", "work", "projects", "contact", "theme green", "clear"].forEach(function (c) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = c;
+      b.addEventListener("click", function () { run(c); input.focus(); });
+      chips.appendChild(b);
+    });
+
+    const stored = localStorage.getItem("prompt-theme");
+    if (stored) document.body.setAttribute("data-theme", stored);
+
+    print("welcome to portfolio.sh");
+    print("type <span class=\"cmd\">help</span> or tap a command below.");
+    run("whoami");
+    input.focus();
+    document.querySelector(".window").addEventListener("click", function () { input.focus(); });
+  </script>
 </body>
 </html>
